@@ -1,0 +1,147 @@
+import React from 'react';
+import { Container, Row, Col, Card, Button, ProgressBar, Tabs, Tab } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.css';  // Your CSS styles
+
+export default function FitnessTracker() {
+  return (
+    <Container>
+      <NavigationBar />
+      <Dashboard />
+    </Container>
+  );
+}
+
+// Navigation Bar Component
+const NavigationBar = () => (
+  <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+    <Container>
+      <a className="navbar-brand" href="#">Fitness Tracker</a>
+      <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span className="navbar-toggler-icon"></span>
+      </button>
+      <div className="collapse navbar-collapse" id="navbarNav">
+        <ul className="navbar-nav ml-auto">
+          <li className="nav-item active">
+            <a className="nav-link" href="#">Home</a>
+          </li>
+          <li className="nav-item">
+            <a className="nav-link" href="#goals">Goals</a>
+          </li>
+          <li className="nav-item">
+            <a className="nav-link" href="#workout">Workout Plans</a>
+          </li>
+          <li className="nav-item">
+            <a className="nav-link" href="#profile">Profile</a>
+          </li>
+        </ul>
+      </div>
+    </Container>
+  </nav>
+);
+
+// Dashboard Component
+const Dashboard = () => (
+  <Container className="my-4">
+    <h2 className="text-center">Your Fitness Dashboard</h2>
+    <Row>
+      {/* Calorie Tracker */}
+      <Col md={4}>
+        <Card className="mb-4">
+          <Card.Body>
+            <Card.Title>Calories Burned</Card.Title>
+            <ProgressBar now={60} label={`${60}%`} />
+            <Card.Text className="mt-2">You've burned 1200 kcal today.</Card.Text>
+            <Button variant="primary">View More</Button>
+          </Card.Body>
+        </Card>
+      </Col>
+
+      {/* Steps Tracker */}
+      <Col md={4}>
+        <Card className="mb-4">
+          <Card.Body>
+            <Card.Title>Steps Taken</Card.Title>
+            <ProgressBar now={80} label={`${8000} steps`} />
+            <Card.Text className="mt-2">Target: 10,000 steps</Card.Text>
+            <Button variant="primary">View More</Button>
+          </Card.Body>
+        </Card>
+      </Col>
+
+      {/* Workout Time */}
+      <Col md={4}>
+        <Card className="mb-4">
+          <Card.Body>
+            <Card.Title>Workout Time</Card.Title>
+            <ProgressBar now={50} label={`${50}%`} />
+            <Card.Text className="mt-2">You've worked out for 30 minutes today.</Card.Text>
+            <Button variant="primary">View More</Button>
+          </Card.Body>
+        </Card>
+      </Col>
+    </Row>
+    <FitnessTabs />
+  </Container>
+);
+
+// Tabs for other fitness features
+const FitnessTabs = () => (
+  <Tabs defaultActiveKey="goals" id="fitness-tabs" className="my-4">
+    <Tab eventKey="goals" title="Goals">
+      <GoalsSection />
+    </Tab>
+    <Tab eventKey="workout" title="Workout Plans">
+      <WorkoutPlans />
+    </Tab>
+    <Tab eventKey="profile" title="Profile">
+      <ProfileSection />
+    </Tab>
+  </Tabs>
+);
+
+// Goals Section
+const GoalsSection = () => (
+  <Container>
+    <h3>Set and Track Your Fitness Goals</h3>
+    <p>Current Goal: Burn 2000 kcal and walk 10,000 steps.</p>
+    <Button variant="success">Set New Goal</Button>
+  </Container>
+);
+
+// Workout Plans Section
+const WorkoutPlans = () => (
+  <Container>
+    <h3>Your Workout Plans</h3>
+    <Row>
+      <Col md={6}>
+        <Card>
+          <Card.Body>
+            <Card.Title>Full Body Workout</Card.Title>
+            <Card.Text>Time: 45 minutes</Card.Text>
+            <Button variant="primary">Start Workout</Button>
+          </Card.Body>
+        </Card>
+      </Col>
+      <Col md={6}>
+        <Card>
+          <Card.Body>
+            <Card.Title>Yoga & Stretching</Card.Title>
+            <Card.Text>Time: 30 minutes</Card.Text>
+            <Button variant="primary">Start Workout</Button>
+          </Card.Body>
+        </Card>
+      </Col>
+    </Row>
+  </Container>
+);
+
+// Profile Section
+const ProfileSection = () => (
+  <Container>
+    <h3>Your Profile</h3>
+    <p>Name: John Doe</p>
+    <p>Fitness Level: Intermediate</p>
+    <Button variant="secondary">Edit Profile</Button>
+  </Container>
+);

@@ -1,0 +1,36 @@
+/* App.css or index.css */
+body {
+  background-color: #000; /* Black background */
+  color: #fff; /* White text color for contrast */
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.modal-content {
+  background-color: #222; /* Dark background for modals */
+  color: #fff; /* White text for modals */
+}
+
+button {
+  background-color: #008080; /* Teal button background */
+  border-color: #008080; /* Teal border for buttons */
+  color: #fff; /* White text on buttons */
+}
+
+button:hover {
+  background-color: #006f6f; /* Slightly darker teal on hover */
+  border-color: #006f6f;
+}
+
+.container {
+  background-color: #000; /* Ensure container also has black background */
+}
+
+.card, .modal-body, .form-control {
+  background-color: #333; /* Dark background for form and card elements */
+  color: #fff; /* White text for form fields and card elements */
+}
+
+h1, h2, h3, h4, h5, h6, p, span, label, .form-text {
+  color: #fff; /* White text for all text elements (headings, paragraphs, labels, etc.) */
+}

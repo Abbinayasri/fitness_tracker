@@ -1,0 +1,8 @@
+.nav-items {
+  display: flex; /* Ensures items are in a single line */
+  flex-wrap: nowrap; /* Prevents wrapping to the next line */
+}
+
+.nav-items .nav-item {
+  margin-left: 20px; /* Optional: Adds space between items */
+}
