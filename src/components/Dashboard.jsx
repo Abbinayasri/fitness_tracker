@@ -12,7 +12,7 @@ import FoodControl from './FoodControl';
 import MentalHealth from './MentalHealth';
 import db from "../firebase"; // Firestore import
 import { collection, addDoc, getDocs } from 'firebase/firestore'; // add getDocs for signin check
-import ActivityLogs from './Activitylogs';
+import ActivityLogs from './ActivityLogs' ;
 import FamousTrainers from './FamousTrainers';
 import './index.css';
 
